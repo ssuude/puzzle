@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js%22%3E"></script> 
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.jpg">
+    <title>Kare Puzzle Oyunu</title>
+    <style>
+      body {
+			background-image: url('bac.jpg');
+			background-repeat: no-repeat;
+			background-size: cover;
+		}
+    .container {
+        margin: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="tab_" style="visibility: hidden; display: block; margin-right:80%; position:absolute">
+    <p  id="score" style="margin:5px;margin-left: 10px;">Zaman: <span id="timer">0</span> saniye</p>
+    <p class="hamle" id="score" style="margin:2px;margin-left: 10px;">Hamle Sayısı: <span id="moveCount">0</span></p>
+    <p class = "skor" id="score"> </p>
+  
+  </div>
+    <form class="upload">
+      <input type="file" id="imgFile" accept="image/*"  style="padding: 1%;"/>
+    </form>
+    <div class="container" id="previewContainer">
+      <img id="imgPreview" src="#" alt="Görsel yüklenmedi" />
+    </div>
+    <div class="table">
+      <table id="scoreboard">
+        <thead>
+          <tr>
+            <th>İsim</th>
+            <th>Puan</th>
+            <th>Hamle Sayısı</th>
+            <th>Süre</th>
+          </tr>
+        </thead>
+        <tbody>
+        </tbody>
+      </table>
+    </div>
+    
+      <div class="popUp" id="popUp">
+        <h3>OYUN BİTTİ!</h3>
+        <h5>Skoru kaydetmek için isim giriniz:</h5>
+        <label for="isim">İsim</label>
+        <input type="text" id="isim" name="isim"><br><br>
+        <button onclick="closePopup()">Kaydet</button>
+      </div>
+
+      <div class="popUp" id="popUp2">
+        <h3>Puzzle'ı bitirmeden çıktığınızda skorunuz kaydedilmez.</h3>
+        <h5>Emin misiniz?</h5>
+        
+        <button onclick="bitir()">Evet</button>
+        <button onclick="kapat()">Hayır</button>
+      </div>
+    
+    
+ 
+
+    <button id="startbtn"  disabled>Karıştır</button>
+    <button style="visibility: hidden" id="endbtn" >Bitir</button>
+    
+    <div style="visibility: hidden;margin-bottom: 80px;" class="row" id="imgGrid"></div>
+    <script src="script.js"></script>
+    
+  </body>
+  <script>
+    const startbtn = document.getElementById("startbtn");
+    const endbtn = document.getElementById("endbtn");
+    const hiddenDiv = document.getElementById("imgGrid");
+    const prv = document.getElementById("previewContainer");
+    const imgFileRes = document.getElementById("imgFile");
+    const imgPreviewCheck = document.getElementById("imgPreview");
+    const nameadd = document.getElementById("nameadd");// endbtn a bakarak ben ekledim
+    const score = document.getElementById("score");
+    const tab = document.getElementById("tab_");
+
+    imgFileRes.addEventListener("change", function () {
+      if (imgPreviewCheck.src) {
+        startbtn.disabled = false;
+      } else {
+        startbtn.disabled = true;
+      }
+    });
+
+    imgPreviewCheck.addEventListener("load", function () {
+
+      const cols = document.querySelectorAll(".col");
+      cols.forEach(function (col) {
+        col.remove();
+      });
+
+      if (imgPreviewCheck.src) {
+        startbtn.disabled = false;
+      } else {
+        startbtn.disabled = true;
+      }
+    });
+
+    imgPreviewCheck.addEventListener("error", function () {
+      startbtn.disabled = true;
+    });
+
+    startbtn.addEventListener("click", function () {
+      tab.style.visibility ="visible";
+      hiddenDiv.style.visibility = "visible";
+      prv.style.visibility = "hidden";
+      prv.style.position = "absolute";
+      startbtn.style.visibility = "hidden";
+      startbtn.style.dispaly = "none";
+      endbtn.style.visibility = "visible";
+      endbtn.disabled= false;
+      imgFileRes.style.visibility ="hidden";
+      imgFileRes.style.display="none";
+      
+      
+    });
+    var popup2 = document.getElementById("popUp2");
+    
+    endbtn.addEventListener("click", function () {
+      popup2.style.display="block";
+    });
+    function kapat(){
+      popup2.style.display="none";
+    }
+
+    function bitir(){
+        window.location.reload();
+      }
+		
+      var popup = document.getElementById("popUp");
+		function closePopup() {
+			popup.style.display = "none";
+      var isim = document.getElementById("isim").value;
+      
+      gamedata(isim,0,countMove(),startTimer());
+    
+		}
+  </script>
+</html>

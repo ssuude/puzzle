@@ -1,0 +1,242 @@
+.container {
+  width:500px;
+  height: 500px;
+  border: 1px solid #000000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+  margin-top: 1%;
+}
+.container img {
+  max-width: 100%;
+  max-height: 100%;
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+.popUp {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  border: 1px solid #000;
+  padding: 20px;
+  z-index: 9999;
+  display: none;
+}
+
+.table{
+  position: absolute;
+  top:200px; 
+  border:1px solid black;
+
+  font-family: "Cormorant Garamond", serif;
+  color: indigo;
+  font-weight: bolder;
+  font-size: 30px;
+  
+  
+  
+}
+th,td{
+  border:1px solid black;
+
+  font-family: "Cormorant Garamond", serif;
+  color: indigo;
+  font-weight: bolder;
+  font-size: 30px;
+  
+ 
+}
+.col {
+  flex: 1 0 25%;
+  max-width: 25%;
+  box-sizing:border-box;
+  padding: 0px;
+}
+.col2 {
+  
+  max-width: 100%;
+  box-sizing:border-box;
+  padding: 0px;
+}
+.col img {
+  display: block;
+  max-width: 100%;
+  width: 600px;
+  height: auto;
+  border: 1px solid #9e9489;
+  margin: 0 auto;
+  
+}
+.upload {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position:static;
+  max-height: 55px;
+  
+}
+#imgGrid {
+  max-width: 800px;
+  max-height: 800px;
+  margin: auto;
+  margin-top:-2%;
+  z-index: 2;
+  position:relative;
+}
+
+h2{
+  position: relative;
+  text-align: center;
+  color: #353535;
+  font-size: 30px;
+  font-family: "Cormorant Garamond", serif;
+}
+
+.tab{
+  visibility: hidden;
+}
+
+/*START BUTTON*/
+#startbtn {
+padding: 20px; 
+padding-left: 40px;
+padding-right: 40px;
+color: #fff;
+display: flex;
+align-items: center;
+justify-content: center;
+overflow: hidden;
+position:static;
+max-height: 47px;
+margin-left:auto;
+margin-right: auto;
+
+/**/
+background: rgb(5, 15, 154);
+  background: linear-gradient(0deg, rgb(56, 62, 154) 0%, rgb(36, 46, 160) 100%);
+  border: none;
+  
+   box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
+   7px 7px 20px 0px rgba(0,0,0,.1),
+   4px 4px 5px 0px rgba(0,0,0,.1);
+  outline: none;
+  font-family: "Cormorant Garamond", serif;
+  font-weight: bolder;
+  font-size: 15px;
+  text-align: center;
+  border-radius: 5px;
+}
+/*START BUTTON BİTTİ**/
+/*END BUTTON*/
+button#endbtn {
+padding: 20px; 
+padding-left: 40px;
+padding-right: 40px;
+display: table;
+color: #fff;
+position:absolute;
+right: 20%;
+z-index: 9;
+/**/
+background: rgb(5, 15, 154);
+  background: linear-gradient(0deg, rgb(56, 62, 154) 0%, rgb(36, 46, 160) 100%);
+  border: none;
+  
+   box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
+   7px 7px 20px 0px rgba(0,0,0,.1),
+   4px 4px 5px 0px rgba(0,0,0,.1);
+  outline: none;
+  font-family: "Cormorant Garamond", serif;
+  font-weight: bolder;
+  font-size: 15px;
+  text-align: center;
+  border-radius: 5px;
+}
+/*END BUTTON BİTTİ**/
+
+/*UPLOAD*/
+input[type="file"] {
+padding: 20px; 
+padding-left: 40px;
+padding-right: 40px;
+display: table;
+color: #fff;
+margin: 10%;
+/**/
+background: rgb(5, 15, 154);
+  background: linear-gradient(0deg, rgb(56, 62, 154) 0%, rgb(36, 46, 160) 100%);
+  border: none;
+  display: inline-block;
+   box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
+   7px 7px 20px 0px rgba(0,0,0,.1),
+   4px 4px 5px 0px rgba(0,0,0,.1);
+  outline: none;
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 300;
+  text-align: center;
+  border-radius: 5px;
+}
+/*UPLOAD BİTTİ*/
+
+/*İSİM KAYIT*/
+form {
+display: inline-block;
+}
+.form-group {
+text-align: center;
+padding-bottom: 25px;
+}
+#todo {
+margin: 0 auto;
+width: 800px;
+}
+
+a.close {
+float: right;
+}
+button#nameadd {
+padding: 8px; 
+padding-left: 10px;
+padding-right: 10px;
+display: table;
+color: #fff;
+margin: 10px;
+/**/
+background: rgb(5, 15, 154);
+  background: linear-gradient(0deg, rgb(56, 62, 154) 0%, rgb(36, 46, 160) 100%);
+  border: none;
+  display: inline-block;
+   box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
+   7px 7px 20px 0px rgba(0,0,0,.1),
+   4px 4px 5px 0px rgba(0,0,0,.1);
+  outline: none;
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 300;
+  text-align: center;
+  border-radius: 5px;
+}
+/* SKOR GÖSTERME */
+#score{
+  font-family: "Cormorant Garamond", serif;
+  color: indigo;
+  font-weight: bolder;
+  font-size: 30px;
+  display:block;
+  margin-left: 47%;
+  margin-right: 45%;
+  margin-top:0%;
+  
+}
+
